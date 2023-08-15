@@ -1,9 +1,11 @@
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react'
 import Iconno from '../img/iconoHambur.png'
 import IconoCerrar from '../img/cerrar.png'
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="px-5 py-5 bg-blue-900 md:w-1/4 md:py-10">
@@ -11,8 +13,17 @@ const Header = () => {
         <h1 className=" text-3xl font-bold text-white md:text-2xl md:mb-5 lg:text-3xl">CRM - REACT</h1>
 
         <nav className="flex flex-col gap-5 items-start">
-          <a className="text-lg font-bold text-white" href="">Clientes</a>
-          <a className="text-lg font-bold text-white" href="">Nuevo Cliente</a>
+          <Link
+            className={`text-lg font-bold ${location.pathname === '/' ? "text-blue-300" : "text-white"} hover:text-blue-300`}
+            to="/">
+            Clientes
+          </Link>
+
+          <Link
+            className={`text-lg font-bold ${location.pathname === '/clientes/nuevo' ? "text-blue-300" : "text-white"} hover:text-blue-300`}
+            to="/clientes/nuevo">
+            Nuevo Cliente
+          </Link>
         </nav>
       </div>
 
@@ -33,8 +44,17 @@ const Header = () => {
         </div>
 
         <nav className="flex flex-col gap-5 items-start">
-          <a className="text-lg font-bold text-white" href="">Clientes</a>
-          <a className="text-lg font-bold text-white" href="">Nuevo Cliente</a>
+          <Link
+            className={`text-lg font-bold ${location.pathname === '/' ? "text-blue-300" : "text-white"} hover:text-blue-300`}
+            to="/">
+            Clientes
+          </Link>
+
+          <Link
+            className={`text-lg font-bold ${location.pathname === '/clientes/nuevo' ? "text-blue-300" : "text-white"} hover:text-blue-300`}
+            to="/clientes/nuevo">
+            Nuevo Cliente
+          </Link>
         </nav>
       </div>
 

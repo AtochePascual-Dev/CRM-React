@@ -14,7 +14,7 @@ const Clientes = () => {
   return (
     <div className="w-11/12 max-w-2xl mx-auto">
       <h2 className="font-extrabold text-3xl text-blue-900">Clientes</h2>
-      <p>Ahor puedes administrar a todos los clientes</p>
+      <p>Ahora puedes administrar a todos los clientes</p>
 
       <table className="w-full mt-5 shadow table-auto bg-white md:mt-14">
         <thead className="bg-blue-800 text-white">
