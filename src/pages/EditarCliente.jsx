@@ -1,6 +1,7 @@
-import { Form, useLoaderData } from "react-router-dom"
+import { Form, redirect, useActionData, useLoaderData } from "react-router-dom"
 import Formulario from "../components/Formulario"
-import { obtenerCliente } from "../api/clientes";
+import { editarCliente, obtenerCliente } from "../api/clientes";
+import Alerta from "../components/Alerta";
 
 export const loader = async ({ params }) => {
   const { clienteID } = params;
@@ -9,8 +10,33 @@ export const loader = async ({ params }) => {
 };
 
 
+export const action = async ({ request, params }) => {
+  // Obtener datos del formulario
+  const fromData = await request.formData();
+  const cliente = Object.fromEntries(fromData);
+  const email = fromData.get("email");
+  const regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+  const { clienteID } = params;
+
+  // Validar datos del cliente
+  if (Object.values(cliente).includes('')) {
+    return 'Todos los campos son obligatorios';
+  };
+
+  // Validar email
+  if (!regex.test(email)) {
+    return 'Email no valido';
+  };
+
+  await editarCliente(clienteID, cliente);
+
+  return redirect("/")
+};
+
+
 const EditarCliente = () => {
   const cliente = useLoaderData();
+  const error = useActionData();
 
 
   return (
@@ -21,7 +47,7 @@ const EditarCliente = () => {
 
       <div className="mt-10 px-5 py-10 bg-white">
 
-        {/* {error && <Alerta>{error}</Alerta>} */}
+        {error && <Alerta>{error}</Alerta>}
 
         <Form
           method="POST"
@@ -34,7 +60,7 @@ const EditarCliente = () => {
           <input
             className="w-full mt-5 p-2 font-bold cursor-pointer text-white bg-blue-900"
             type="submit"
-            value="Agregar Cliente"
+            value="Guardar Cambios"
           />
         </Form>
       </div>
