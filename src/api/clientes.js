@@ -49,9 +49,22 @@ const editarCliente = async (id, cliente) => {
   }
 };
 
+
+const eliminarCliente = async (id) => {
+  try {
+    fetch(`http://localhost:3000/clientes/${id}`, {
+      method: 'DELETE',
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export {
   obtenerClientes,
   obtenerCliente,
   registrarCliente,
-  editarCliente
+  editarCliente,
+  eliminarCliente
 }
