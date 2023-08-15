@@ -10,41 +10,35 @@
     },
     {
       "nombre": "Karen ",
-      "empresa": "Codigo Con Juan",
+      "empresa": "Codigo Con karen",
       "email": "karen@juan.com",
       "telefono": "138198313",
       "notas": "notas",
       "id": 2
     },
     {
-      "id": 3,
       "nombre": "Josue",
-      "telefono": 31983913,
+      "empresa": "Codigo Con Josue",
       "email": "josue@juan.com",
-      "empresa": "Codigo Con Juan"
+      "telefono": "31983913",
+      "notas": "notas",
+      "id": 3
     },
     {
-      "id": 4,
       "nombre": "Miguel",
-      "telefono": 319381983,
+      "empresa": "Codigo Con Miguel",
       "email": "miguel@juan.com",
-      "empresa": "Codigo Con Juan"
+      "telefono": "319381983",
+      "notas": "notas",
+      "id": 4
     },
     {
-      "nombre": "juan",
+      "nombre": "jean",
       "empresa": "codigo con jean",
       "email": "correo@correo.com",
       "telefono": "123456",
-      "notas": "sdfsd",
+      "notas": "notas",
       "id": 5
-    },
-    {
-      "nombre": "spayk",
-      "empresa": "Cartosac",
-      "email": "correo@correo.com",
-      "telefono": "123456",
-      "notas": "he's sick",
-      "id": 6
     }
   ]
 }
