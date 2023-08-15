@@ -9,6 +9,19 @@ const obtenerClientes = async () => {
   }
 };
 
+
+const obtenerCliente = async (id) => {
+  try {
+    const respuesta = await fetch(`http://localhost:3000/clientes/${id}`);
+    const cliente = await respuesta.json();
+    return cliente
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 const registrarCliente = async (cliente) => {
   try {
     fetch('http://localhost:3000/clientes', {
@@ -24,5 +37,6 @@ const registrarCliente = async (cliente) => {
 
 export {
   obtenerClientes,
+  obtenerCliente,
   registrarCliente
 }
