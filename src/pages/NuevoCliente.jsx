@@ -1,4 +1,4 @@
-import { Form, redirect, useActionData } from "react-router-dom"
+import { Form, redirect, useActionData, useNavigate } from "react-router-dom"
 import Formulario from "../components/Formulario"
 import Alerta from "../components/Alerta";
 import { registrarCliente } from "../api/clientes";
@@ -27,13 +27,21 @@ export const action = async ({ request }) => {
 
 const NuevoCliente = () => {
   const error = useActionData();
-
+  const navigate = useNavigate();
 
   return (
     <div className="w-11/12 max-w-2xl mx-auto">
 
       <h2 className="font-extrabold text-3xl text-blue-900">Nuevo Cliente</h2>
       <p>Ahora puedes agregar un cliente</p>
+
+      <div className="flex justify-end">
+        <button
+          onClick={() => navigate("/")}
+          className="px-3 py-1 rounded-sm text-white bg-blue-900">
+          Volver
+        </button>
+      </div>
 
       <div className="mt-10 px-5 py-10 bg-white">
 
