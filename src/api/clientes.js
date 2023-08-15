@@ -9,6 +9,20 @@ const obtenerClientes = async () => {
   }
 };
 
+const registrarCliente = async (cliente) => {
+  try {
+    fetch('http://localhost:3000/clientes', {
+      method: 'POST',
+      body: JSON.stringify(cliente),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export {
-  obtenerClientes
+  obtenerClientes,
+  registrarCliente
 }
