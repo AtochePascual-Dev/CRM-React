@@ -35,8 +35,23 @@ const registrarCliente = async (cliente) => {
   }
 };
 
+
+const editarCliente = async (id, cliente) => {
+  try {
+    fetch(`http://localhost:3000/clientes/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(cliente),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export {
   obtenerClientes,
   obtenerCliente,
-  registrarCliente
+  registrarCliente,
+  editarCliente
 }
