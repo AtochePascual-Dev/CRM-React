@@ -31,14 +31,6 @@
       "telefono": "319381983",
       "notas": "notas",
       "id": 4
-    },
-    {
-      "nombre": "jean",
-      "empresa": "codigo con jean",
-      "email": "correo@correo.com",
-      "telefono": "123456",
-      "notas": "notas",
-      "id": 5
     }
   ]
 }
