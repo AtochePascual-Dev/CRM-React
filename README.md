@@ -49,7 +49,3 @@ Si deseas contribuir al proyecto, por favor, haz un fork del repositorio y crea 
 # preview
 
 ![](https://i.imgur.com/ELdrvUY.png)
-
-```
-
-```
